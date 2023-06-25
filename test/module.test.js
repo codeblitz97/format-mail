@@ -1,4 +1,4 @@
-const { emailFormatter, Fonts } = require('../dist');
+const { emailFormatter, Fonts, Align } = require('../dist');
 
 describe('emailFormatter', () => {
   test('formatting with bold', () => {
@@ -62,5 +62,17 @@ describe('emailFormatter', () => {
     const formattedText = emailFormatter.underline('Hello!');
 
     expect(formattedText).toBe('<u>Hello!</u>');
+  });
+
+  test('formatting with size', () => {
+    const newSizeText = emailFormatter.size('1rem', 'Hello');
+
+    expect(newSizeText).toBe('<span style="font-size: 1rem">Hello</span>');
+  });
+  test('Align a string', () => {
+    const AlignedText = emailFormatter.align(Align.center, 'Hello World!');
+    expect(AlignedText).toBe(
+      `<span style="text-align: center">Hello World!</span>`
+    );
   });
 });
