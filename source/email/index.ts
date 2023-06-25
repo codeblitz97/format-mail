@@ -1,3 +1,3 @@
 import { emailFormatter } from './formatter';
-
-export { emailFormatter };
+import { HTMLTags } from './htmlTags';
+export { HTMLTags, emailFormatter };
