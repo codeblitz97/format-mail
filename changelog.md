@@ -26,3 +26,26 @@
 ### Fixed
 
 - Fixed markdown typos
+
+## 1.2.0 - 2023-06-23
+
+### Changed
+
+- Font Enum
+
+### Added
+
+- `table()` method
+- `td()` method
+- `th()` method
+- `tr()` method
+- `br()` method
+- `hr()` method
+- `button()` method
+- `span()` method
+- `ol()` method
+- `ul()` method
+
+### Fixed
+
+- Fixed error handler
