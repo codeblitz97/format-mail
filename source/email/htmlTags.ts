@@ -187,4 +187,30 @@ export const HTMLTags = {
       styleString ? ' style="' + styleString + '"' : ''
     }/>`;
   },
+  paragraph(str: string, ...style: string[]) {
+    if (typeof str !== 'string') {
+      throwError(
+        'Custom',
+        'InvalidParagraphType',
+        `Expected type of 'STR' to be 'string' but got ${getType(str)} instead.`
+      );
+    }
+    const styleString =
+      style.length > 0 ? style.map((s: string) => s + ';').join(' ') : '';
+    return `<p${styleString ? ' style="' + styleString + '"' : ''}>${str}</p>`;
+  },
+  div(str: string, ...style: string[]) {
+    if (typeof str !== 'string') {
+      throwError(
+        'Custom',
+        'InvalidDivType',
+        `Expected type of 'STR' to be 'string' but got ${getType(str)} instead.`
+      );
+    }
+    const styleString =
+      style.length > 0 ? style.map((s: string) => s + ';').join(' ') : '';
+    return `<div${
+      styleString ? ' style="' + styleString + '"' : ''
+    }>${str}</div>`;
+  },
 };
