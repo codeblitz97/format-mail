@@ -1,6 +1,6 @@
 {
   "name": "format-mail",
-  "version": "1.2.0-dev",
+  "version": "1.2.0",
   "description": "Formatter for email, make your email looks beautiful!",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
