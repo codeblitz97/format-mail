@@ -137,7 +137,7 @@ export const emailFormatter = {
    */
   font(font?: Fonts, text?: string) {
     const str = text ?? 'Hello, World!';
-    const fontName = font ?? Fonts.OpenSans;
+    const fontName = font ?? Fonts.SansSerif;
     if (!Object.values(Fonts).includes(fontName)) {
       throwError(
         'Error',
