@@ -1,6 +1,6 @@
 {
   "name": "format-mail",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Formatter for email, make your email looks beautiful!",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,8 +11,7 @@
   ],
   "scripts": {
     "test": "jest",
-    "build": "tsc",
-    "publish": "npm publish"
+    "build": "tsc"
   },
   "keywords": [
     "Email",
