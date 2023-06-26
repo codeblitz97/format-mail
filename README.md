@@ -9,13 +9,13 @@ Format-Mail is a simple Node.js module for formatting email contents. With this 
 ## Installation
 
 ```sh
-npm install mail-format@latest
+npm install format-mail@latest
 ```
 
 Or, if you prefer using Yarn:
 
 ```sh
-yarn add mail-format@latest
+yarn add format-mail@latest
 ```
 
 ## Basic Formatting Example (JavaScript)
@@ -23,7 +23,7 @@ yarn add mail-format@latest
 ```javascript
 'use strict';
 const nodemailer = require('nodemailer');
-const { emailFormatter, HTMLTags } = require('mail-format');
+const { emailFormatter, HTMLTags } = require('format-mail');
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.forwardemail.net',
@@ -70,7 +70,7 @@ main().catch(console.error);
 
 ```typescript
 import * as nodemailer from 'nodemailer';
-import { emailFormatter, HTMLTags } from 'mail-format';
+import { emailFormatter, HTMLTags } from 'format-mail';
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.forwardemail.net',
