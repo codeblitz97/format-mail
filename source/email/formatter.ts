@@ -90,7 +90,7 @@ export const emailFormatter = {
         `Expected type of 'STR' to be 'string' but received ${getType(str)}`
       );
     }
-    return `<strong>${str}</strong>`;
+    return `<b>${str}</b>`;
   },
 
   /**
