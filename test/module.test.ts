@@ -1,4 +1,5 @@
-const { emailFormatter, Fonts, Align, HTMLTags } = require('../dist');
+import { emailFormatter, Fonts, Align, HTMLTags } from '../source';
+
 describe('emailFormatter', () => {
   test('formatting with bold', () => {
     const formattedText = emailFormatter.bold('Hello');
@@ -25,6 +26,7 @@ describe('emailFormatter', () => {
     );
     expect(formattedText).toBe('<span style="color: #FFFFFF">Hello!</span>');
   });
+
   test('formatting with color2', () => {
     const formattedText = emailFormatter.color(
       emailFormatter.rgba(255, 0, 0, 0.4),
@@ -34,6 +36,7 @@ describe('emailFormatter', () => {
       '<span style="color: rgba(255, 0, 0, 0.4)">Hello!</span>',
     );
   });
+
   test('formatting with color3', () => {
     const formattedText = emailFormatter.color(
       emailFormatter.rgb(255, 0, 0),
@@ -46,21 +49,19 @@ describe('emailFormatter', () => {
 
   test('formatting with strikethrough', () => {
     const formattedText = emailFormatter.strikethrough('Hello!');
-
     expect(formattedText).toBe('<s>Hello!</s>');
   });
 
   test('formatting with underline', () => {
     const formattedText = emailFormatter.underline('Hello!');
-
     expect(formattedText).toBe('<u>Hello!</u>');
   });
 
   test('formatting with size', () => {
     const newSizeText = emailFormatter.size('1rem', 'Hello');
-
     expect(newSizeText).toBe('<span style="font-size: 1rem">Hello</span>');
   });
+
   test('Align a string', () => {
     const AlignedText = emailFormatter.align(Align.center, 'Hello World!');
     expect(AlignedText).toBe(
@@ -78,6 +79,7 @@ describe('HTMLTags', () => {
       '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png"/>',
     );
   });
+
   test('multiple functions', () => {
     const MultipleFunctions = HTMLTags.heading1(
       `Hello ${HTMLTags.span('World', 'color: green', 'font-size: 60px')}`,
