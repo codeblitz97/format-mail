@@ -73,19 +73,21 @@ function throwError(
  * Object with the HTML Tags.
  * @namespace
  */
-export const HTMLTags = {
+const HTMLTags = {
   /**
    * Generates an h1 tag with optional styles.
    * @param {string} str - The content of the h1 tag.
    * @param {...string} style - Optional styles to be applied.
    * @returns {string} The generated h1 tag HTML.
    */
-  heading1(str: string, ...style: string[]) {
-    if (typeof str !== 'string') {
+  heading1<T extends string>(str: string, ...style: T[]) {
+    if (getType(str) !== 'string') {
       throwError(
         'Custom',
         'InvalidHeadingType',
-        `Expected type of 'STR' to be 'string' but got ${getType(str)} instead.`
+        `Expected type of 'STR' to be 'string' but got ${getType(
+          str,
+        )} instead.`,
       );
     }
     const styleString =
@@ -101,12 +103,14 @@ export const HTMLTags = {
    * @param {...string} style - Optional styles to be applied.
    * @returns {string} The generated h2 tag HTML.
    */
-  heading2(str: string, ...style: string[]) {
-    if (typeof str !== 'string') {
+  heading2<T extends string>(str: string, ...style: T[]) {
+    if (getType(str) !== 'string') {
       throwError(
         'Custom',
         'InvalidHeadingType',
-        `Expected type of 'STR' to be 'string' but got ${getType(str)} instead.`
+        `Expected type of 'STR' to be 'string' but got ${getType(
+          str,
+        )} instead.`,
       );
     }
     const styleString =
@@ -122,12 +126,14 @@ export const HTMLTags = {
    * @param {...string} style - Optional styles to be applied.
    * @returns {string} The generated h3 tag HTML.
    */
-  heading3(str: string, ...style: string[]) {
-    if (typeof str !== 'string') {
+  heading3<T extends string>(str: string, ...style: T[]) {
+    if (getType(str) !== 'string') {
       throwError(
         'Custom',
         'InvalidHeadingType',
-        `Expected type of 'STR' to be 'string' but got ${getType(str)} instead.`
+        `Expected type of 'STR' to be 'string' but got ${getType(
+          str,
+        )} instead.`,
       );
     }
     const styleString =
@@ -150,15 +156,17 @@ export const HTMLTags = {
         'Custom',
         'InvalidHeadingType',
         `Expected type of 'href' to be 'string' but got ${getType(
-          href
-        )} instead.`
+          href,
+        )} instead.`,
       );
     }
-    if (typeof str !== 'string') {
+    if (getType(str) !== 'string') {
       throwError(
         'Custom',
         'InvalidHeadingType',
-        `Expected type of 'STR' to be 'string' but got ${getType(str)} instead.`
+        `Expected type of 'STR' to be 'string' but got ${getType(
+          str,
+        )} instead.`,
       );
     }
     const styleString =
@@ -178,7 +186,7 @@ export const HTMLTags = {
       throwError(
         'Custom',
         'EmailFormatterError',
-        `Expected type of 'URL' to be 'string' but received ${getType(url)}`
+        `Expected type of 'URL' to be 'string' but received ${getType(url)}`,
       );
     }
     const styleString =
@@ -193,12 +201,14 @@ export const HTMLTags = {
    * @param {...string} style - Optional styles to be applied.
    * @returns {string} The generated paragraph tag HTML.
    */
-  paragraph(str: string, ...style: string[]) {
-    if (typeof str !== 'string') {
+  paragraph<T extends string>(str: string, ...style: T[]) {
+    if (getType(str) !== 'string') {
       throwError(
         'Custom',
         'InvalidParagraphType',
-        `Expected type of 'STR' to be 'string' but got ${getType(str)} instead.`
+        `Expected type of 'STR' to be 'string' but got ${getType(
+          str,
+        )} instead.`,
       );
     }
     const styleString =
@@ -211,12 +221,14 @@ export const HTMLTags = {
    * @param {...string} style - Optional styles to be applied.
    * @returns {string} The generated div tag HTML.
    */
-  div(str: string, ...style: string[]) {
-    if (typeof str !== 'string') {
+  div<T extends string>(str: string, ...style: T[]) {
+    if (getType(str) !== 'string') {
       throwError(
         'Custom',
         'InvalidDivType',
-        `Expected type of 'STR' to be 'string' but got ${getType(str)} instead.`
+        `Expected type of 'STR' to be 'string' but got ${getType(
+          str,
+        )} instead.`,
       );
     }
     const styleString =
@@ -231,12 +243,14 @@ export const HTMLTags = {
    * @param {...string} style - Optional styles to be applied.
    * @returns {string} The generated span tag HTML.
    */
-  span(str: string, ...style: string[]) {
-    if (typeof str !== 'string') {
+  span<T extends string>(str: string, ...style: T[]) {
+    if (getType(str) !== 'string') {
       throwError(
         'Custom',
         'InvalidSpanType',
-        `Expected type of 'STR' to be 'string' but got ${getType(str)} instead.`
+        `Expected type of 'STR' to be 'string' but got ${getType(
+          str,
+        )} instead.`,
       );
     }
     const styleString =
@@ -302,13 +316,13 @@ export const HTMLTags = {
    * @returns {string} The generated table tag HTML.
    */
   table(content: string, ...style: string[]) {
-    if (typeof content !== 'string') {
+    if (getType(content) !== 'string') {
       throwError(
         'Custom',
         'InvalidParagraphType',
         `Expected type of 'STR' to be 'string' but got ${getType(
-          content
-        )} instead.`
+          content,
+        )} instead.`,
       );
     }
 
@@ -326,13 +340,13 @@ export const HTMLTags = {
    * @returns {string} The generated tr tag HTML.
    */
   tr(content: string, ...style: string[]) {
-    if (typeof content !== 'string') {
+    if (getType(content) !== 'string') {
       throwError(
         'Custom',
         'InvalidParagraphType',
         `Expected type of 'STR' to be 'string' but got ${getType(
-          content
-        )} instead.`
+          content,
+        )} instead.`,
       );
     }
 
@@ -350,13 +364,13 @@ export const HTMLTags = {
    * @returns {string} The generated td tag HTML.
    */
   td(content: string, ...style: string[]) {
-    if (typeof content !== 'string') {
+    if (getType(content) !== 'string') {
       throwError(
         'Custom',
         'InvalidParagraphType',
         `Expected type of 'STR' to be 'string' but got ${getType(
-          content
-        )} instead.`
+          content,
+        )} instead.`,
       );
     }
 
@@ -374,13 +388,13 @@ export const HTMLTags = {
    * @returns {string} The generated th tag HTML.
    */
   th(content: string, ...style: string[]) {
-    if (typeof content !== 'string') {
+    if (getType(content) !== 'string') {
       throwError(
         'Custom',
         'InvalidParagraphType',
         `Expected type of 'STR' to be 'string' but got ${getType(
-          content
-        )} instead.`
+          content,
+        )} instead.`,
       );
     }
 
@@ -399,7 +413,20 @@ export const HTMLTags = {
    * @param {...string} style - Optional styles to be applied.
    * @returns {string} The generated button tag HTML.
    */
-  button(text: string, options: { onClick: Function }, ...style: string[]) {
+  button<T extends string>(
+    text: string,
+    options: { onClick: Function },
+    ...style: T[]
+  ) {
+    if (getType(text) !== 'string') {
+      throwError(
+        'Custom',
+        'InvalidParagraphType',
+        `Expected type of 'STR' to be 'string' but got ${getType(
+          text,
+        )} instead.`,
+      );
+    }
     const onClickHandler = options.onClick
       ? `onclick="${options.onClick.toString()}"`
       : '';
@@ -411,4 +438,66 @@ export const HTMLTags = {
       styleString ? ' style="' + styleString + '"' : ''
     }>${text}</button>`;
   },
+
+  /**
+   * Generates a block qoute tag with optional styles.
+   * @param {string} text - The content of the table header.
+   * @param {...string} style - Optional styles to be applied.
+   * @returns {string} The generated blockqoute tag HTML.
+   */
+  blockquote<T extends string>(text: string, ...style: T[]) {
+    if (getType(text) !== 'string') {
+      throwError(
+        'Custom',
+        'InvalidParagraphType',
+        `Expected type of 'STR' to be 'string' but got ${getType(
+          text,
+        )} instead.`,
+      );
+    }
+    const styleString =
+      style.length > 0 ? style.map((s: string) => s + ';').join(' ') : '';
+
+    return `<blockqoute${
+      styleString ? ' style="' + styleString + '"' : ''
+    }>${text}</blockqoute>`;
+  },
+
+  code<T extends string>(str: string, ...style: T[]) {
+    if (getType(str) !== 'string') {
+      throwError(
+        'Custom',
+        'InvalidSpanType',
+        `Expected type of 'STR' to be 'string' but got ${getType(
+          str,
+        )} instead.`,
+      );
+    }
+    const styleString =
+      style.length > 0 ? style.map((s: string) => s + ';').join(' ') : '';
+
+    return `<code ${
+      styleString ? ' style="' + styleString + '"' : ''
+    }>${str}</code>`;
+  },
+  pre<T extends string>(str: string, ...style: T[]) {
+    if (getType(str) !== 'string') {
+      throwError(
+        'Custom',
+        'InvalidSpanType',
+        `Expected type of 'STR' to be 'string' but got ${getType(
+          str,
+        )} instead.`,
+      );
+    }
+
+    const styleString =
+      style.length > 0 ? style.map((s: string) => s + ';').join(' ') : '';
+
+    return `<pre ${
+      styleString ? ' style="' + styleString + '"' : ''
+    }>${str}</pre>`;
+  },
 };
+
+export { HTMLTags };
